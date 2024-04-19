@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Images</title>
+<style>
+ /* Style the pop-up message */
+ .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 350px;
+  }
+
+
+
+  /* Hide the desktop image on mobile */
+  @media (max-width: 767px) {
+    .desktop-image {
+      display: none;
+    }
+  }
+  
+  /* Hide the mobile image on desktop */
+  @media (min-width: 768px) {
+    .mobile-image {
+      display: none;
+    }
+  }
+  
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+ 
+ /* Define the CSS for the clickable image */
+
+ /* Style for the modal popup */
+  /* Style for the modal popup */
+  .login-popup {
+    
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow: auto;
+  
+}
+
+.modal-content {
+    background-color:  #1a2c38;;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 340px;
+    margin-top: 200px;
+}
+
+.close {
+    text-align: right;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.popup-heading {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;  
+    font-weight: 600;
+    Line-height: 27px;
+    font-family: proxima-nova, sans-serif;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: proxima-nova, sans-serif;
+    font-size:small;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color:#fff;
+    background:#0f212e;
+
+}
+
+.login-btn {
+    width: 105%;
+    padding: 10px;
+    height: 50px;
+    background-color: rgb(2,231,1);
+    color: #171515;
+    border: none;
+    font-weight: 1000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social-login {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.social-btn {
+    width: 10%;
+    height: 40%;
+    padding: 10px;
+    background-color: #ccc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.forgot-password-btn {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 120px;
+    color: #fff;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.register-btn {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color:#fff;
+}
+.social-logo{
+height: 40px;
+width: 40px;
+margin-left: 10px;
+border-radius: 5px;
+
+
+}
+</style>
+</head>
+<body>
+
+<!-- Image for desktop -->
+
+<img src="img/stakedesktop.png" class="desktop-image" alt="Image for desktop" onclick="openModal()">
+
+<!-- Image for mobile -->
+<img src="img/stakemobile.png" class="mobile-image" alt="Image for mobile" onclick="openModal()">
+
+<!-- Modal Login popup -->
+<div class="login-popup" id="login-modal">
+  <div class="modal-content">
+      <div class="close">
+          <button type="button" id="close-btn1" class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <h1 class="popup-heading">Sign In</h1>
+      <form class="login-form">
+          <label for="emailOrName">Email or Username*</label>
+          <input type="text" id="emailOrName" name="emailOrName" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <button onclick="openPopup()" id="openPopup" class="login-btn">Sign In</button>
+      </form>
+      <div class="social-login">
+          <img src="img/facebook-logo.png" alt="Facebook Logo" class="social-logo">
+          <img src="img/google-logo.png" alt="Google Logo" class="social-logo">
+          <img src="img/line-logo.png" alt="Line Logo" class="social-logo">
+          <img src="img/twitch-logo.png" alt="Twitch Logo" class="social-logo">
+      </div>
+      <button type="button" class="forgot-password-btn">Forgot Password</button>
+      <div class="register-link">Don’t have an account? <button type="button" class="register-btn">Register an Account</button></div>
+  </div>
+</div>
+<!-- End Modal Login popup -->
+
+<!-- Modal  Erro popup -->
+<div id="popup" class="popup">
+  <span class="css-1uah4tn">
+    <span class="css-1u8cpva">
+
+
+<div style="margin:0 auto; text-align:center;"><img src="img/er0.png" width="250"></div>
+      <h2>
+
+
+        <span>Log in issues in Stake !</span>
+      </h2>
+
+      <p>Due to a recent login activity your account has been blocked. Please call our support team to resolve this issue.</p>
+      <h5 style="color:black;">Error CODE: E0C00X07-8XD0700D</h5>
+
+      <h5 style="color:black; font-size:20px;">Call Stake Helpline Number</h5>
+      <h5 style="color:black; font-size:20px;"> Call Now : <a href="tel:+18882066451"> +1-888-206-6451 (Toll Free)</a></h5>
+
+    <p>Due to unauthorized activity and identification failure on your Account. Account Access has been suspended.Please Get in touch with our Support Staff Immediately</p><br>
+      </span>
+    </span>
+</div>
+<!-- End Modal Login popup -->
+    <script>
+      // Function to open the modal popup
+      function openModal() {
+        document.getElementById('login-modal').style.display = 'block';
+      }
+    
+      // Function to close the modal popup
+      function closeModal() {
+        document.getElementById('login-modal').style.display = 'block';
+      }
+      document.addEventListener("DOMContentLoaded", function() {
+    // Function to open the pop-up
+    function openPopup(event) {
+      event.preventDefault();
+      document.getElementById("popup").style.display = "block";
+    }
+    document.getElementById("openPopup").addEventListener("click", openPopup);
+  });
+    </script>
+   
+</body>
+</html>
